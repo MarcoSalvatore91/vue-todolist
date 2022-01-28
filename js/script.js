@@ -7,11 +7,29 @@ const message = new Vue({
     el: '#root',
 
     data: {
+    
+    newTask: '',
     tasks: [
         {text: 'Fare la spesa a Zia May', done: true,},
         {text: 'Portare Mary Jane sopra la Statua della Libertà', done: false,},
         {text: 'Mangiare una Pizza al SALAMINO da Frank', done: false,},
         {text: 'Scattare un selfie con Russel Crowe', done: false,},
     ],
-    }
+},
+
+    // # Functions
+
+    methods: {
+
+        addItem(){
+
+            const newTask = this.newTask.trim();
+            if (newTask) {
+                this.tasks.push({text: newTask, done: false,})
+            }
+            this.newTask = '';
+
+        }
+
+    },
 });
