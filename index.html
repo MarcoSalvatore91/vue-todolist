@@ -21,13 +21,12 @@
                 <input type="text" class="form-control" placeholder="Non ti dimenticare di..." aria-label="Recipient's username" aria-describedby="button-addon2">
                 <button class="btn btn-outline-success" type="button" id="button-addon2">Aggiungi</button>
             </div>
-            <ul class="list-group">
-                <li class="list-group-item">Fare la spesa a zia May!</li>
-                <li class="list-group-item">Portare Mary Jane sopra l'Empire State Building</li>
-                <li class="list-group-item">Trovare quel birbante del Goblin</li>
-                <li class="list-group-item">Scattare un selfie con Russel Crowe</li>
-            </ul>
-            <h1 class="text-center my-5">Sono un grande!!!</h1>
+            <div>
+                <ul class="list-group" v-if='(tasks.text !== 0)'>
+                    <li class="list-group-item" v-for='(task, index) in tasks'>{{ task.text }}</li>
+                </ul>
+                <h1 class="text-center my-5" v-else>Sono un grande!!!</h1>
+            </div>
         </section>
     </div>
     <script src="js/script.js"></script>
