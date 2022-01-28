@@ -1,3 +1,7 @@
 #contain {
     width: 50%;
 }
+
+#cross {
+    cursor: pointer;
+}

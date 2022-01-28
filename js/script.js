@@ -29,6 +29,10 @@ const message = new Vue({
             }
             this.newTask = '';
 
+        },
+
+        removeItem (index) {
+            this.tasks.splice(index, 1)
         }
 
     },
