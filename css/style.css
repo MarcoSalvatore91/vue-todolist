@@ -5,3 +5,11 @@
 #cross {
     cursor: pointer;
 }
+
+.deleted {
+    text-decoration: line-through;
+}
+
+.fa-square {
+    cursor: pointer;
+}

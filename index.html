@@ -18,13 +18,13 @@
                 <h1 class="d-inline-block">Spidey doveri</h1>
             </div>
             <div class="input-group my-5">
-                <input type="text" class="form-control" placeholder="Non ti dimenticare di..." aria-label="Recipient's username" aria-describedby="button-addon2" v-model='newTask'>
+                <input type="text" class="form-control" placeholder="Non ti dimenticare di..." aria-label="Recipient's username" aria-describedby="button-addon2" v-model='newTask' @keyup.enter='addItem'>
                 <button class="btn btn-outline-success" type="button" id="button-addon2" @click="addItem">Aggiungi</button>
             </div>
             <div>
-                <ul class="list-group" v-if='(tasks.text !== 0)'>
+                <ul class="list-group" v-if='(tasks.length !== 0)'>
                     <li class="list-group-item d-flex justify-content-between" v-for='(task, index) in tasks'>
-                        <div>
+                        <div :class="{'deleted' : task.done}" @click='deletedItem(index)'>
                             {{ task.text }}
                         </div>
                         <i id="cross" class="fas fa-times align-self-center" @click='removeItem(index)'></i>

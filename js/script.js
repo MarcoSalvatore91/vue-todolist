@@ -21,7 +21,7 @@ const message = new Vue({
 
     methods: {
 
-        addItem(){
+        addItem() {
 
             const newTask = this.newTask.trim();
             if (newTask) {
@@ -33,6 +33,10 @@ const message = new Vue({
 
         removeItem (index) {
             this.tasks.splice(index, 1)
+        },
+
+        deletedItem (index) {
+            this.tasks[index].done = !this.tasks[index].done;
         }
 
     },
